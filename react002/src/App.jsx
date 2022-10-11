@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "./services/api";
 import ListeContato from "./components/listaContatos";
 export default function App() {
   // States
@@ -26,7 +26,7 @@ export default function App() {
     setListeContatos([...listeContatos, contactos]);
   }
   useEffect(() => {
-    axios.get().then((response) => {
+    api.get(" http://localhost:8080/").then((response) => {
       setUsuarios(response.data.user);
       setUrl(response.data.url);
     });
