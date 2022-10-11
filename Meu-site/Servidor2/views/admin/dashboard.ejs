@@ -1,0 +1,70 @@
+<%- contentFor('body')%>
+<div class="container">
+    <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/user/logout">Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#"> <%= user.nome %></a>
+    </li>
+  </ul>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Ações</th>
+        <th scope="col">Foto</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% if (data.length > 0) { %> <% data.forEach(user => {  %>
+      <tr>
+        <th scope="row"><%= user.id_usuario %></th>
+        <td><%= user.nome %></td>
+        <td>@ <img src="<%= url + user.images %>" alt="" width="50" ></td>
+        <td>
+            <a href="/user/edite/<%= user.id_usuario %>">Editar</a>
+            <a href="/user/deleter/<%= user.id_usuario %> ">Apagar</a>
+        </td>
+      </tr>
+      <% }) %> <% } %>
+    </tbody>
+  </table>
+    <% if(user.nivel == 1) {%>
+
+   
+
+        <h2>Cadastrar usuarios</h2>
+        <a href="/user/register">Registar</a> 
+   <% } else {%>
+    <p>Operador</p>
+   <% }%>
+
+  
+   <a href="/dashboard/?pagina=<%= 1 %>">Primeira</a> 
+   <%  for(let pag_ant = paginas - max_link ; pag_ant <= paginas -1 ; pag_ant ++ ){ %>
+  
+        <% if(pag_ant >= 1) { %>
+            <a href="/dashboard/?pagina=<%- pag_ant %>"><%= pag_ant %> </a> 
+        <% } %>
+   <% } %> 
+  
+       <%= paginas %>
+  
+  <%  for(let pag_dep = paginas +1; pag_dep <= paginas + max_link; pag_dep ++ ) { %>
+  
+      <% if(pag_dep <= quantidade_pag) { %>
+          <a href="/dashboard/?pagina=<%= pag_dep %>"><%= pag_dep %> </a> 
+      <% } %>
+  <% } %>
+  <a href="/dashboard/?pagina=<%= quantidade_pag %>">Última </a>
+</div>

@@ -1,0 +1,14 @@
+<h1>Editar Usuarios</h1>
+<div>
+    <form action='/user/atualize/<%=user.id_usuario%>' method="post">
+        <label for="">Nome</label>
+        <input type="text" name="nome" value="<%= user.nome %>" >
+        <label for="">Email</label>
+        <input type="text" name="email"value="<%= user.email %>">
+        <label for="">Nivel de Acesso</label>
+        <input type="number" name="nivel" value="<%= user.nivel %>">
+        
+        <button type="submit">Actualizar</button>
+    </form>
+     
+</div>
