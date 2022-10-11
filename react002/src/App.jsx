@@ -26,7 +26,7 @@ export default function App() {
     setListeContatos([...listeContatos, contactos]);
   }
   useEffect(() => {
-    axios.get("http://localhost:8080/").then((response) => {
+    axios.get().then((response) => {
       setUsuarios(response.data.user);
       setUrl(response.data.url);
     });
