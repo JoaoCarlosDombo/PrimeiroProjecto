@@ -23,7 +23,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Minha lista de Contactos</h1>
+      <h1>Minha lista de Usuarios</h1>
 
       <ListeContato listeContatos={listeContatos} />
 
