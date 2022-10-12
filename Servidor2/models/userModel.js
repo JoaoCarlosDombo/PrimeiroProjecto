@@ -1,7 +1,7 @@
-const db = require("../config/Db");
-//const db = require('../config/Connect')
+//const db = require("../config/Db");
+const db = require('../config/Connect')
 
-const Usuario = db.sequelize.define("usuarios", {
+const Usuario = db.define("usuarios", {
     id_usuario: {
         type: db.Sequelize.INTEGER,
         autoIncrement: true,
@@ -27,7 +27,7 @@ const Usuario = db.sequelize.define("usuarios", {
 });
 //crea a tabela se ela não existe
 const init = async () => {
-    await Usuario.sync();
+    await Usuario.sync({ force: true });
 };
 init();
 module.exports = Usuario;
