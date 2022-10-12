@@ -27,7 +27,7 @@ const Usuario = db.define("usuarios", {
 });
 //crea a tabela se ela não existe
 const init = async () => {
-    await Usuario.sync({ force: true });
+    await Usuario.sync();
 };
 init();
 module.exports = Usuario;
