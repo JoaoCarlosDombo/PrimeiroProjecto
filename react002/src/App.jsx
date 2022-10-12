@@ -14,17 +14,6 @@ export default function App() {
   });
 
   //metodos
-  function definirNome(event) {
-    setContactos({ ...contactos, nome: event.target.value });
-  }
-
-  function definirTelefone(event) {
-    setContactos({ ...contactos, telefone: event.target.value });
-  }
-
-  function adicionarContatos() {
-    setListeContatos([...listeContatos, contactos]);
-  }
   useEffect(() => {
     api.get(" http://localhost:8080/").then((response) => {
       setUsuarios(response.data.user);
@@ -35,19 +24,6 @@ export default function App() {
   return (
     <>
       <h1>Minha lista de Contactos</h1>
-      <hr />
-      <div>
-        <input type="text" onChange={definirNome} value={contactos.nome} />
-      </div>
-      <div>
-        <input
-          type="text"
-          onChange={definirTelefone}
-          value={contactos.telefone}
-        />
-      </div>
-      <button onClick={adicionarContatos}>Adicionar Contactos</button>
-      <hr />
 
       <ListeContato listeContatos={listeContatos} />
 
