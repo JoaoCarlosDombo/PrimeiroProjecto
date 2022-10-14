@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express')
 const expressEjsLayouts = require('express-ejs-layouts')
 const app = express()
-const PORT = process.env.PORT || 8080
+
 const JWT = require('jsonwebtoken')
 const cookieparser = require('cookie-parser')
 const { urlencoded } = require('express')
@@ -12,7 +12,7 @@ const cors = require('cors')
 const routerHome = require('./routes/home')
 const userRoute = require('./routes/user')
 
-
+const PORT = process.env.PORT || 8081
 //bodyparser
 app.use(urlencoded({ extends: true }))
 app.use(bodyParser.json());
@@ -48,7 +48,7 @@ app.use('/', routerHome)
 app.use('/user', userRoute)
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3030, () => {
     console.log('Servidor rodando na porta ' + PORT)
 })
 
