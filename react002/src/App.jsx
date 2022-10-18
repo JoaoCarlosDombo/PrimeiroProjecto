@@ -15,7 +15,7 @@ export default function App() {
 
   //metodos
   useEffect(() => {
-    api.get(" http://localhost:8080/").then((response) => {
+    api.get(" https://primeiro-web-site.herokuapp.com/").then((response) => {
       setUsuarios(response.data.user);
       setUrl(response.data.url);
     });
