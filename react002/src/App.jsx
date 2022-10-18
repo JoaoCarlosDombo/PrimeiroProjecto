@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import api from "./services/api";
+//import api from "./services/api";
+import axios from "axios";
 import ListeContato from "./components/listaContatos";
 export default function App() {
   // States
@@ -15,7 +16,7 @@ export default function App() {
 
   //metodos
   useEffect(() => {
-    api.get(" https://primeiro-web-site.herokuapp.com/").then((response) => {
+    axios.get(" https://primeiro-web-site.herokuapp.com/").then((response) => {
       setUsuarios(response.data.user);
       setUrl(response.data.url);
     });
