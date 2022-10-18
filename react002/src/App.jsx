@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 //import api from "./services/api";
 import axios from "axios";
 import ListeContato from "./components/listaContatos";
+import Header from "./components/header";
 export default function App() {
   // States
   const [contactos, setContactos] = useState({ nome: "", telefone: "" });
@@ -24,8 +25,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Minha listar os Postes</h1>
-
+      <Header />
       <ListeContato listeContatos={listeContatos} />
     </>
   );
