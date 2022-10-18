@@ -18,7 +18,7 @@ export default function App() {
     axios
       .get("https://primeiro-web-site.herokuapp.com/post")
       .then((response) => {
-        setUsuarios(response.data);
+        setListeContatos(response.data);
       });
   }, []);
 
