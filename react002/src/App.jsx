@@ -8,10 +8,9 @@ export default function App() {
   const [listeContatos, setListeContatos] = useState([]);
   const [url, setUrl] = useState({ url: "" });
   const [usuarios, setUsuarios] = useState({
-    nome: "",
-    email: "",
-    apelido: "",
-    images: "",
+    id_post: "",
+    titulo: "",
+    conteudo: "",
   });
 
   //metodos
