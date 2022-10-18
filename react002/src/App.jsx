@@ -20,7 +20,6 @@ export default function App() {
       .get("https://primeiro-web-site.herokuapp.com/post")
       .then((response) => {
         setUsuarios(response.data);
-        console.log(response.data);
       });
   }, []);
 
