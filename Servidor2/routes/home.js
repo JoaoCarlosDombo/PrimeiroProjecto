@@ -3,18 +3,18 @@ const loginRequired = require('../config/jwt')
 const router = express.Router()
 const Usuario = require('../models/userModel')
 
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
     const userId = req.usuario
-    const dados = {
-        apelido: 'Dombo'
-    }
-    await Usuario.findOne({ where: userId }).then((user) => {
-        res.json({
-            user,
-            url: 'http://localhost:8080/files/user/'
-        })
+    //const dados = {
+    //     apelido: 'Dombo'
+    // }
+    // await Usuario.findOne({ where: userId }).then((user) => {
+    //    res.json({
+    //       user,
+    //       url: 'http://localhost:8080/files/user/'
+    //  })
 
-    })
+    // })
 
 })
 
