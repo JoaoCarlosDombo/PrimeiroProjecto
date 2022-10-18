@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Minha lista de Usuarios</h1>
+      <h1>Minha listar os Postes</h1>
 
       <ListeContato listeContatos={listeContatos} />
     </>
