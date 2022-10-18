@@ -6,7 +6,7 @@ export default function ListeContato({ listeContatos }) {
       <ul>
         {listeContatos.map((contatos) => {
           return (
-            <li key={uuidv}>{contatos.nome + "  " + contatos.telefone}</li>
+            <li key={uuidv}>{contatos.titulo + "  " + contatos.telefone}</li>
           );
         })}
       </ul>
