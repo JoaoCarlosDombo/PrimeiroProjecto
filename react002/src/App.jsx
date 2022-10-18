@@ -28,7 +28,7 @@ export default function App() {
       <ListeContato listeContatos={listeContatos} />
 
       <hr />
-      <p>Nome: {usuarios.nome}</p>
+      <p>Nome: {usuarios.titulo}</p>
       <p>Email: {usuarios.email}</p>
       <p>Apelido: {usuarios.apelido}</p>
       <img src={url + usuarios.images} alt="" width="200" />
