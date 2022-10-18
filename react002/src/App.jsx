@@ -18,6 +18,7 @@ export default function App() {
   useEffect(() => {
     axios.get("https://primeiro-web-site.herokuapp.com/").then((response) => {
       setUsuarios(response.data);
+      console.log(response.data);
     });
   }, []);
 
