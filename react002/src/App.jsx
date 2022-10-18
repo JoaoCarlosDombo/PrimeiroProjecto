@@ -16,10 +16,12 @@ export default function App() {
 
   //metodos
   useEffect(() => {
-    axios.get("https://primeiro-web-site.herokuapp.com/").then((response) => {
-      setUsuarios(response.data);
-      console.log(response.data);
-    });
+    axios
+      .get("https://primeiro-web-site.herokuapp.com/post")
+      .then((response) => {
+        setUsuarios(response.data);
+        console.log(response.data);
+      });
   }, []);
 
   return (
