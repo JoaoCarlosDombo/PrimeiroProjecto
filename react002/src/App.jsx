@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Form from "./components/Form/index";
 import Header from "./components/Headers/header";
 import Resumo from "./components/Resumo/Resumo";
 import Global from "./Styles/globalStyle";
@@ -28,9 +29,10 @@ export default function App() {
 
   return (
     <>
-      <Global />
       <Header />
       <Resumo />
+      <Form />
+      <Global />
     </>
   );
 }
