@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-//import api from "./services/api";
+import Header from "./components/Headers/header";
+import Resumo from "./components/Resumo/Resumo";
+import Global from "./Styles/globalStyle";
+/*import api from "./services/api";
 import axios from "axios";
 import ListeContato from "./components/listaContatos";
-import Header from "./components/header";
+import Header from "./components/Headers";*/
 export default function App() {
-  // States
+  /* // States
   const [contactos, setContactos] = useState({ nome: "", telefone: "" });
   const [listeContatos, setListeContatos] = useState([]);
   const [url, setUrl] = useState({ url: "" });
@@ -21,12 +24,13 @@ export default function App() {
       .then((response) => {
         setListeContatos(response.data);
       });
-  }, []);
+  }, []);*/
 
   return (
     <>
+      <Global />
       <Header />
-      <ListeContato listeContatos={listeContatos} />
+      <Resumo />
     </>
   );
 }
